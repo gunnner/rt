@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Image:
+  = @photo.image_url
+
+= link_to 'Edit', edit_album_photo_path([current_album, @photo])
+'  |
+= link_to 'Back', album_photos_path(current_album)

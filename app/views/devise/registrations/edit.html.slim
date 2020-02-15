@@ -1,0 +1,7 @@
+== render 'form' do |f|
+  .row
+    .col-xs-12
+      .form-group.form-group-default
+        = f.label :current_password, class: 'label label-primary'
+        i  we need your current password to confirm your changes
+        = f.password_field :current_password, autocomplete: 'off', class: 'form-control', required: ''

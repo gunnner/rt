@@ -1,0 +1,7 @@
+.col-xs-3
+  .block-small
+    = link_to album
+      = image_tag (album.photos.first.image_url rescue 'default_image.png'), class: 'img img-responsive img-preview'
+  .row
+    .col-xs-10
+      = album.name

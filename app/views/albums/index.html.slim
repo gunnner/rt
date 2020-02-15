@@ -1,0 +1,11 @@
+h1.text-center#label Listing albums
+.row#albums
+  - @albums.each do |album|
+    == render 'album', album: album
+  .col-xs-3
+    .block-small
+      = link_to new_album_path
+        #box.new-album
+          #overlay
+            span#plus +
+.row#paginator = paginate @albums, remote: true

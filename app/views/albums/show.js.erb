@@ -1,0 +1,8 @@
+$('#photos')
+  .html(`
+    <% @photos.each do |photo| %>
+      <%= render 'photo', photo: photo %>
+    <% end %>
+  `)
+
+$('#paginator').html('<%= j (paginate(@photos, :remote => true).to_s) %>')

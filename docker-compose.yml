@@ -1,0 +1,22 @@
+version: '3'
+services:
+  test-task-db:
+    container_name: test-task-db
+    image: postgres:10-alpine
+    volumes:
+      - test-task-data-postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  test-task-web:
+    container_name: test-task-web
+    build: .
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - test-task-db
+volumes:
+  test-task-data-postgres:
+    driver: local

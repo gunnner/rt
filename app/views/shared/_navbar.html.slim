@@ -1,0 +1,17 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      = link_to root_url, class: 'navbar-brand'
+        = image_tag 'logo_with_text.png', class: 'logo'
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        - if user_signed_in?
+          li = link_to 'Gallery', albums_path
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          li = image_tag current_user.image_url, class: 'img img-responsive profile-photo'
+          li = link_to current_user.display_name , profile_url
+          li = link_to 'Log out', destroy_user_session_path, method: :delete
+        - else
+          li = link_to 'Sign up', new_user_registration_url
+          li = link_to 'Log in', user_session_url

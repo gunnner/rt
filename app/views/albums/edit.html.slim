@@ -1,0 +1,9 @@
+h1 Editing album
+= form_for @album do |f|
+  h3 photos
+  #tasks
+    = f.fields_for :photos do |photo|
+      = render 'photo_fields', f: photo
+    .links
+      = link_to_add_association 'add photo', f, :photos
+  = f.submit

@@ -1,0 +1,19 @@
+= link_to 'Edit', edit_album_path, class: 'btn btn-warning btn-xs'
+h2.text-center.text-capitalize
+  = best_in_place @album, :name
+.row
+  #photos
+    - @photos.each do |photo|
+      == render 'photo', photo: photo
+  .image-box-wrapper
+    .image-box
+      .image-container
+        = image_tag 'new_photo.png', style: 'background-color: white'
+      .image-details
+        .details
+          = form_for(@album, html: {multipart: true}) do |f|
+            = f.fields_for :photos, @album.photos.build do |ff|
+              = ff.file_field :image, required: ''
+            = f.submit
+    .clear
+.row#paginator = paginate @photos, remote: true

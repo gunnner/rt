@@ -1,0 +1,10 @@
+#image-box-wrapper.image-box-wrapper
+  .image-box
+    .image-container
+      = image_tag photo.image_url
+    .image-details
+      .details
+        h4 Description:
+        p = photo.description.empty? ? 'No decription provided' : photo.description
+        = link_to 'Full Size Photo', photo.image_url, target: '_blank', class: 'btn btn-default'
+  .clear

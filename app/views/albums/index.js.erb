@@ -1,0 +1,3 @@
+$('#albums').html('<%= j render @albums %>');
+
+$('#paginator').html('<%= j (paginate(@albums, :remote => true).to_s) %>');
