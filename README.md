@@ -22,4 +22,4 @@ Requirements:
 - You can use RailsAPI or Grape + GrapeEntity(more suitable variant)
 - API should be protected with any kind of authorization
 - Upgrade Rails to version 6
-- Upgrade Ruby to version 2.7 
+- Upgrade Ruby to version 3 
