@@ -1,7 +1,7 @@
 This repository contains a small project, which manipulates albums and photos.
 
 1. Fork the repository.
-2. Implement requested functionality.
+2. Implement requested functionality regarding to requirements, pointed below.
 3. Create a pull request IN YOUR OWN REPOSITORY with a completed task.
 4. Let us know
 
