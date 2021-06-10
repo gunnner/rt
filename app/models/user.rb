@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :albums
 
+  VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   accepts_nested_attributes_for :albums, allow_destroy: true
 
   validates_presence_of :email
