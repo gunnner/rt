@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :albums
 
   get '*unmatched_route', to: 'application#render_404' unless Rails.env.development?
+
+  mount RailsTask::API => '/'
 end
