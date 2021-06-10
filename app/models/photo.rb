@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
 
   belongs_to :album, counter_cache: :photos_counter
 
-  def author
+  def author_id
     album.user_id
   end
 end
