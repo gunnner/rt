@@ -6,5 +6,6 @@ module RailsTask
 
     mount RailsTask::V1::Albums
     mount RailsTask::V1::Photos
+    mount RailsTask::V1::Login
   end
 end
