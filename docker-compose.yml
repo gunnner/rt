@@ -3,9 +3,7 @@ services:
   test-task-db:
     container_name: test-task-db
     image: postgres:10-alpine
-    environment:
-      POSTGRES_USER: <%= ENV.fetch('POSTGRES_USER') %>
-      POSTGRES_PASSWORD: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+    env_file: .env
     volumes:
       - test-task-data-postgres:/var/lib/postgresql/data
     ports:
