@@ -3,6 +3,7 @@ services:
   test-task-db:
     container_name: test-task-db
     image: postgres:10-alpine
+    env_file: .env
     volumes:
       - test-task-data-postgres:/var/lib/postgresql/data
     ports:
